@@ -18,16 +18,12 @@ connection.connect(function(err){
 var start = function(){
 	console.log('Welcome to Bamazon!');
 	console.log('Here is our current inventory.');
-	searchAll();
-	inquirer.prompt({
-		name: 'purchaseId',
-		message: 'Please enter the ID of the item you would like to purchase:'
-	},{
-		name: 'purchaseQuantity',
-		message: 'Please enter the number of [products] you like to purchase:'
-	}
-	}).then(function(answer){
-
+	new Promise(function () {
+		return searchAll();
+	}).then(function() {
+		console.log('hello');
+	}).catch(function(err) {
+		console.log(err);
 	});
 }
 
@@ -38,4 +34,8 @@ var searchAll = function() {
 			console.log('ID#: ' + res[i].item_id + ' "' + res[i].product_name + '" Price: ' + res[i].price);
 		}
 	});
+}
+
+var makePurchase = function() {
+	
 }
