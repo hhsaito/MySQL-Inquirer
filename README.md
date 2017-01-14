@@ -15,4 +15,4 @@
   * Exit
   
 ###### Video
-A [video of the program working](blob/master/bamazon.mov) has been uploaded.
+A [video of the program working](bamazon.mov) has been uploaded.
